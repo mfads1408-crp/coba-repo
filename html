@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Pakar Tas Gunung</title>
+    <link rel="stylesheet" href="/tasgunung/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="title">Rekomendasi & Merk Tas Gunung</div>
+        <div class="form">
+            <div class="bot-inbox inbox">
+                <div class="icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="msg-header">
+                    <p>Hallo Kak, Silahkan tanyakan Rekomendasi & Merk Tas Gunung</p>
+                </div>
+            </div>
+        </div>
+        <div class="typing-field">
+            <div class="suggested-questions">
+                <span class="suggestion">Rekomendasi Merek</span>
+                <span class="suggestion">Kapasitas Pemula</span>
+                <span class="suggestion">Harga Tas</span>
+                <span class="suggestion">Tips Packing</span>
+                <span class="suggestion"></span>
+            </div>
+            <div class="input-data">
+                <input id="data" type="text" placeholder="Apa yang anda butuhkan?" required>
+                <button id="send-btn">Kirim</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            // Event ketika tombol Kirim diklik
+            $("#send-btn").on("click", function () {
+                $value = $("#data").val();
+                if ($value.trim() === '') return; // Mencegah kirim pesan kosong
+
+                $msg = '<div class="user-inbox inbox"><div class="msg-header"><p>' + $value + '</p></div></div>';
+                $(".form").append($msg);
+                $("#data").val('');
+                //start ajax code
+                $.ajax({
+                    url: "message.php",
+                    method: "POST",
+                    data: { message: $value },
+                    success: function (response) {
+                        // Handle the response from the server
+                        $reply = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>' + response + '</p></div></div>';
+                        $(".form").append($reply);
+                        // Scroll to the bottom of the chat
+                        $(".form").scrollTop($(".form")[0].scrollHeight);
+                    }
+                });
+            });
+
+            // Event ketika suggestion diklik
+            $(".suggestion").on("click", function () {
+                var text = $(this).text();
+                $("#data").val(text);
+                $("#send-btn").click();
+            });
+
+            // Event ketika tombol Enter ditekan pada keyboard
+            $("#data").on("keypress", function (e) {
+                if (e.which === 13) {
+                    $("#send-btn").click(); // Men-trigger klik pada tombol Kirim
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
