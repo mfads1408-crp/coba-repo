@@ -1,0 +1,87 @@
+<?php
+$message = $_POST['message'] ?? '';
+
+$message = strtolower($message);
+
+if (strpos($message, 'berat') !== false) {
+    echo "Tas gunung yang ringan biasanya di bawah 1kg. Apakah Anda mencari tas untuk pendakian singkat atau panjang?";
+} elseif (strpos($message, 'kapasitas') !== false || strpos($message, 'ukuran') !== false || strpos($message, 'liter') !== false) {
+    echo "Kapasitas tas gunung bervariasi dari 20L hingga 80L+. Untuk tektok (sehari) cukup 20-30L, 2-3 hari bisa 40-50L, dan 4 hari lebih bisa pilih 60L ke atas.";
+} elseif (strpos($message, 'harga') !== false || strpos($message, 'budget') !== false) {
+    echo "Harga tas gunung berkualitas mulai dari Rp 300.000 hingga jutaan. Bergantung pada merek, bahan, dan fitur yang ditawarkan.";
+} elseif (strpos($message, 'merek daypack') !== false || strpos($message, 'merk daypack') !== false) {
+    echo "Untuk Merek Daypack Internasional/luar yang populer: Osprey, Deuter, Arc'teryx, Gregory, The North Face, Salomon, Columbia, Fjällräven. Merek lokal yang bagus: Consina, Eiger, Arei, Avtech, BigAdventure, Torch. Mana yang Anda minati?";
+} elseif (strpos($message, 'osprey') !== false) {
+    echo "Merek Osprey memiliki varian ternama seperti Aether/Ariel (beban berat), Atmos/Aura (ventilasi Anti-Gravity terbaik), dan Kestrel/Kyte (all-rounder).";
+} elseif (strpos($message, 'deuter') !== false) {
+    echo "Merek Deuter sangat terkenal dengan keawetannya. Varian andalannya: Aircontact (beban berat/durabilitas tinggi), Futura (jaring punggung), dan seri SL (khusus anatomi wanita).";
+} elseif (strpos($message, 'gregory') !== false) {
+    echo "Merek Gregory terkenal dengan suspensi yang nyaman. Varian andalannya adalah Baltoro (pria) dan Deva (wanita) untuk beban berat.";
+} elseif (strpos($message, 'the north face') !== false || strpos($message, 'tnf') !== false) {
+    echo "Merek The North Face (TNF) memiliki varian tas gunung tangguh seperti seri Terra dan Griffin untuk pendakian panjang.";
+} elseif (strpos($message, 'arc\'teryx') !== false || strpos($message, 'arcteryx') !== false) {
+    echo "Arc'teryx memiliki varian andalan seperti Bora AR dengan suspensi RotoGlide dan material tahan cuaca ekstrem.";
+} elseif (strpos($message, 'eiger') !== false) {
+    echo "Eiger adalah brand lokal legendaris. Varian andalannya: seri Excelsior, Eliptic, dan Rhinos yang tangguh di iklim tropis.";
+} elseif (strpos($message, 'consina') !== false) {
+    echo "Consina dikenal fungsional dan terjangkau. Varian carrier populernya: seri Tarebbi, Bering, Extraterrestrial, dan Centurion.";
+} elseif (strpos($message, 'arei') !== false) {
+    echo "Arei populer dengan paket tas yang sudah include raincover. Varian populernya: Ramelu, Toba, dan Atmos.";
+} elseif (strpos($message, 'avtech') !== false) {
+    echo "Avtech adalah brand lokal dengan harga bersahabat. Varian populernya seperti seri Galoa, Bogaboo, dan Kadita.";
+} elseif (strpos($message, 'salomon') !== false) {
+    echo "Salomon terkenal dengan tas untuk fast hiking dan trail running. Varian populernya seperti seri Trailblazer, XT, dan Out Day/Night.";
+} elseif (strpos($message, 'columbia') !== false) {
+    echo "Columbia memiliki varian tas tangguh untuk outdoor seperti seri Titan Pass, Newton Ridge, dan berbagai daypack fungsional.";
+} elseif (strpos($message, 'fjällräven') !== false || strpos($message, 'fjallraven') !== false) {
+    echo "Fjällräven sangat unik karena varian andalannya, Kajka, menggunakan frame dari kayu. Ada juga seri Keb dan Abisko untuk trekking.";
+} elseif (strpos($message, 'bigadventure') !== false || strpos($message, 'big adventure') !== false) {
+    echo "BigAdventure adalah brand lokal yang semakin populer. Varian andalannya seperti seri Tambora dan Mandalika yang tangguh untuk pendakian.";
+} elseif (strpos($message, 'torch') !== false) {
+    echo "Torch sangat dikenal dengan tas traveling dan daypack yang praktis. Varian populernya seperti seri Kanzaki, Takahagi, dan Fujisawa.";
+} elseif (strpos($message, 'varian') !== false || strpos($message, 'tipe merek') !== false) {
+    echo "Setiap merek punya varian andalan. Silakan sebutkan merek yang Anda inginkan (contoh: 'varian Osprey', 'Eiger', atau 'Consina').";
+} elseif (strpos($message, 'merek') !== false || strpos($message, 'merk') !== false || strpos($message, 'brand') !== false) {
+    echo "Untuk merek internasional populer: Osprey, Deuter, Arc'teryx, Gregory, The North Face. Merek lokal: Consina, Eiger, Arei, Avtech. Anda bisa ketik nama merek untuk melihat variannya (misal: 'Eiger' atau 'Osprey').";
+} elseif (strpos($message, 'bahan') !== false || strpos($message, 'material') !== false) {
+    echo "Bahan yang umum dan tangguh untuk tas gunung adalah Cordura, Nylon, atau Polyester. Pastikan bahan tersebut sudah memiliki fitur tahan robek (ripstop).";
+} elseif (strpos($message, 'waterproof') !== false || strpos($message, 'hujan') !== false || strpos($message, 'air') !== false) {
+    echo "Sebagian besar tas gunung memiliki sifat water-resistant, tapi tidak sepenuhnya waterproof. Sebaiknya pastikan tas Anda memiliki fitur include 'Raincover' (jas hujan tas).";
+} elseif (strpos($message, 'punggung') !== false || strpos($message, 'backsystem') !== false || strpos($message, 'nyaman') !== false) {
+    echo "Pilih tas dengan 'backsystem' yang bisa diatur (adjustable torso) dan memiliki busa berongga (mesh) agar sirkulasi udara baik dan punggung tidak mudah berkeringat.";
+} elseif (strpos($message, 'pemula') !== false || strpos($message, 'baru') !== false) {
+    echo "Untuk pendaki pemula, sangat disarankan menggunakan tas kapasitas 40L atau 50L. Tidak terlalu besar tapi cukup untuk menampung logistik standar pendakian 2-3 hari.";
+} elseif (strpos($message, 'cewek') !== false || strpos($message, 'wanita') !== false || strpos($message, 'perempuan') !== false) {
+    echo "Banyak merek merilis seri khusus wanita (biasanya ada kode 'SL' atau 'Women Fit'). Tas ini dirancang dengan panjang punggung lebih pendek dan tali bahu (shoulder strap) melengkung agar tidak menekan dada.";
+} elseif (strpos($message, 'daypack') !== false || strpos($message, 'harian') !== false) {
+    echo "Daypack adalah tas gunung ukuran kecil (biasanya 15L - 35L). Sangat pas untuk pendakian tektok (pulang pergi dalam sehari) atau untuk aktivitas harian/sekolah/kuliah/pada saat liburan.";
+} elseif (strpos($message, 'carrier') !== false || strpos($message, 'keril') !== false) {
+    echo "Carrier (sering disebut keril) adalah ransel besar khusus pendakian/perjalanan jauh, dengan kapasitas mulai dari 40L, 60L, hingga 100L. Dirancang menahan beban berat.";
+} elseif (strpos($message, 'rekomendasi') !== false || strpos($message, 'saran') !== false) {
+    echo "Untuk memberikan rekomendasi yang pas, boleh kasih tahu saya: 1. Berapa lama rencana pendakian Anda? 2. Berapa budget yang Anda miliki?";
+} elseif (strpos($message, 'terima kasih') !== false || strpos($message, 'makasih') !== false || strpos($message, 'thanks') !== false) {
+    echo "Sama-sama, Sahabat Alam! Jangan ragu bertanya lagi jika butuh bantuan seputar perlengkapan gunung. Selamat merencanakan pendakian!";
+} elseif (strpos($message, 'hallo') !== false || strpos($message, 'hai') !== false || strpos($message, 'pagi') !== false || strpos($message, 'siang') !== false || strpos($message, 'sore') !== false || strpos($message, 'malam') !== false || strpos($message, 'halo') !== false) {;
+    echo "Halo! Selamat datang di Rekomendasi Tas Gunung. Apa yang ingin Anda ketahui? Mungkin kami bisa membantu/memberi tahubb tentang 'kapasitas', 'merek', 'harga', atau 'bahan'.";
+} elseif (strpos($message, 'packing') !== false || strpos($message, 'susun') !== false || strpos($message, 'tata') !== false) {
+    echo "Tips Packing: Letakkan barang ringan (sleeping bag) di bawah. Barang berat (tenda, air) rapat di punggung tengah. Barang yang sering dipakai (P3K, jas hujan) di atas/kepala tas.";
+} elseif (strpos($message, 'cuci') !== false || strpos($message, 'bersih') !== false || strpos($message, 'rawat') !== false) {
+    echo "Cara mencuci tas: JANGAN pakai mesin cuci! Sikat lembut bagian kotor dengan air hangat & sabun bayi. Jemur di tempat teduh (jangan kena matahari langsung).";
+} elseif (strpos($message, 'tali') !== false || strpos($message, 'strap') !== false || strpos($message, 'sabuk') !== false) {
+    echo "Strap dada dan strap pinggang (hip belt) wajib dipakai rapat agar beban keril pindah ke panggul, sehingga bahu tidak cepat pegal.";
+} elseif (strpos($message, 'frameless') !== false || strpos($message, 'tanpa frame') !== false) {
+    echo "Tas frameless ditujukan bagi penganut Ultralight. Tasnya sangat ringan tanpa rangka, tapi otot Anda yang menahan bentuk tas. Tidak disarankan untuk beban di atas 10kg-12kg.";
+} elseif (strpos($message, 'ultralight') !== false || strpos($message, 'ul') !== false) {
+    echo "Pendakian Ultralight (UL) meminimalkan bobot alat. Jika tenda & perlengkapan Anda belum ringan, sebaiknya jangan pakai tas UL karena akan menyiksa pundak.";
+} elseif (strpos($message, 'frame') !== false || strpos($message, 'rangka') !== false) {
+    echo "Tas standar memiliki rangka aluminium (internal frame) yang menjaga postur tas tegak, melindungi tulang belakang, dan menyebarkan beban secara merata.";
+} elseif (strpos($message, 'jahitan') !== false || strpos($message, 'bartex') !== false || strpos($message, 'kuat') !== false) {
+    echo "Pilih tas dengan jahitan ganda dan sistem 'Bartex' (jahitan zigzag tebal) pada titik tumpu tali bahu agar kuat menahan beban berat.";
+} elseif (strpos($message, 'drybag') !== false || strpos($message, 'trashbag') !== false || strpos($message, 'plastik') !== false) {
+    echo "Wajib! Sebelum memasukkan barang, lapisi keril dari dalam dengan trashbag tebal atau Drybag. Raincover luar seringkali masih bisa rembes saat hujan badai.";
+} elseif (strpos($message, 'garansi') !== false || strpos($message, 'rusak') !== false || strpos($message, 'perbaikan') !== false) {
+    echo "Beberapa merek luar (Osprey) punya garansi seumur hidup. Merek lokal rata-rata memberi garansi perbaikan 1 tahun untuk resleting dan jahitan jebol.";
+} else {
+    echo "Maaf, saya tidak mengerti pertanyaan/kalimat tersebut. Coba tanyakan tentang: ukuran, merek, varian merek dari berbagai brand, harga, bahan, anti air, backsystem, cara packing, cuci tas, ultralight, atau garansi.";
+}
+?>
